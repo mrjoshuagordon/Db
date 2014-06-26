@@ -94,4 +94,14 @@
         android:text="Button" 
         android:onClick="goToNew"/>
 
+      <Button
+          android:id="@+id/btnCalculate"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignBaseline="@+id/btnCalculate"
+          android:layout_alignBottom="@+id/btnCalculate"
+          android:layout_toRightOf="@+id/btnClick1"
+          android:onClick="goToNew2"
+          android:text="Button2" />
+
 </RelativeLayout>

@@ -147,9 +147,15 @@ public class TestAdapter
      
      public ArrayList getArrayTestDataNew(String query) 
      { 
+      //   String[] words = new String[8]; 
+         
+         
          try 
          { 
-             String sql ="SELECT * from Employees where Name ='" + query + "'";
+             // String sql ="SELECT * from Employees where Name ='" + query + "'";
+             
+             String sql ="SELECT * from foods limit 20"; 
+             
              //String sql ="SELECT EmployeeId, Name, Email FROm Employees"; 
              Cursor mCur = mDb.rawQuery(sql, null); 
             
@@ -158,9 +164,23 @@ public class TestAdapter
              if (mCur != null ) {
                  if  (mCur.moveToFirst()) {
                      do {
-                         String firstName = mCur.getString(mCur.getColumnIndex("Name"));
-                         String email = mCur.getString(mCur.getColumnIndex("Email"));
-                         results.add("Name: " + firstName + ",Email: " + email);
+                        // String firstName = mCur.getString(mCur.getColumnIndex("Name"));
+                       //  String email = mCur.getString(mCur.getColumnIndex("Email"));
+                         String restaurant = mCur.getString(mCur.getColumnIndex("restaurant")); 
+                         String category = mCur.getString(mCur.getColumnIndex("category"));
+                         String food_name = mCur.getString(mCur.getColumnIndex("food_name"));
+                         String calories_name = mCur.getString(mCur.getColumnIndex("calories_name"));
+                         String protein_name = mCur.getString(mCur.getColumnIndex("protein_name"));
+                         String fat_name = mCur.getString(mCur.getColumnIndex("fat_name"));
+                         String carb_name = mCur.getString(mCur.getColumnIndex("carb_name"));
+                         String fiber_name = mCur.getString(mCur.getColumnIndex("fiber_name"));
+                         
+                                                 
+                         
+                         
+                         results.add(restaurant + ", " + category + ", " + food_name + ", " + 
+                         calories_name + ", " + protein_name + ", " +
+                                 fat_name + ", " + carb_name + ", " + fiber_name );
                      }while (mCur.moveToNext());
                  } 
                  
@@ -184,9 +204,74 @@ public class TestAdapter
      
      
      
+      // START NEW METHOD ATTEMPT ///////////////////////////////////////////////////////////////////////
+
+     
+     public ArrayList<HashMap<String, String>> getArrayTestDataNew2(String query) 
+     { 
+      //   String[] words = new String[8]; 
+         
+         ArrayList<HashMap<String, String>> foodArrayList = new ArrayList<HashMap<String, String>>(); 
+         try 
+         { 
+             // String sql ="SELECT * from Employees where Name ='" + query + "'";
+             
+             String sql ="SELECT * from foods limit 20"; 
+             
+             //String sql ="SELECT EmployeeId, Name, Email FROm Employees"; 
+             Cursor mCur = mDb.rawQuery(sql, null); 
+            
+             
+             
+             if (mCur != null ) {
+                 if  (mCur.moveToFirst()) {
+                     do {
+                        // String firstName = mCur.getString(mCur.getColumnIndex("Name"));
+                       //  String email = mCur.getString(mCur.getColumnIndex("Email"));
+                         String restaurant = mCur.getString(mCur.getColumnIndex("restaurant")); 
+                         String category = mCur.getString(mCur.getColumnIndex("category"));
+                         String food_name = mCur.getString(mCur.getColumnIndex("food_name"));
+                         String calories_name = mCur.getString(mCur.getColumnIndex("calories_name"));
+                         String protein_name = mCur.getString(mCur.getColumnIndex("protein_name"));
+                         String fat_name = mCur.getString(mCur.getColumnIndex("fat_name"));
+                         String carb_name = mCur.getString(mCur.getColumnIndex("carb_name"));
+                         String fiber_name = mCur.getString(mCur.getColumnIndex("fiber_name"));
+                                                                         
+                         
+                         
+                         HashMap<String, String> foodMap = new HashMap<String, String>();
+                         
+                         foodMap.put("foodId", mCur.getString(0));
+                         foodMap.put("restaurant", mCur.getString(1));
+                         foodMap.put("food_name", mCur.getString(2));
+                         foodMap.put("calories_name", mCur.getString(3));
+                         foodMap.put("protein_name", mCur.getString(4));
+                         foodMap.put("fat_name", mCur.getString(5));
+                         foodMap.put("carb_name", mCur.getString(6));
+                         foodMap.put("fiber_name", mCur.getString(7));
+                         
+                         foodArrayList.add(foodMap); 
+                         
+                         
+                         
+                     }while (mCur.moveToNext());
+                 } 
+                 
+                 
+             }           
+
+             return foodArrayList;
+         } 
+         catch (SQLException mSQLException)  
+         { 
+             Log.e(TAG, "getTestData >>"+ mSQLException.toString()); 
+             throw mSQLException; 
+         } 
+     }
      
      
      
+  // END METHOD ATTEMPT ///////////////////////////////////////////////////////////////////////
 
      
     public boolean SaveEmployee(String name, String email) 

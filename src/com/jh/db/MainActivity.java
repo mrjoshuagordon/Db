@@ -132,7 +132,16 @@ public class MainActivity extends Activity {
         
     } 
     
-
+  public void goToNew2(View v){
+      EditText queryName = (EditText) findViewById(R.id.queryName); 
+      String name = queryName.getText().toString();
+     
+      Intent myIntent = new Intent(MainActivity.this, NextActivity2.class);
+     myIntent.putExtra("key", name); //Optional parameters
+      MainActivity.this.startActivity(myIntent);
+      
+      
+  } 
     
     
     
