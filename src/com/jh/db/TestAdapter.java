@@ -299,7 +299,34 @@ public class TestAdapter
      
      
   // END METHOD ATTEMPT ///////////////////////////////////////////////////////////////////////
-
+     public HashMap<String, String> getFoodInfo(String id){
+         
+         HashMap<String, String> foodMap = new HashMap<String, String>();
+         
+        // SQLiteDatabase database = mDb;
+         
+         String selectQuery = "SELECT * FROM foods WHERE foodId='" + id + "'";
+         
+         Cursor cursor = mDb.rawQuery(selectQuery, null);
+         
+         if(cursor.moveToFirst()){
+             
+             do{
+                 
+                 foodMap.put("foodId", cursor.getString(0));
+                 foodMap.put("food_name", cursor.getString(1));
+                 foodMap.put("protein_name", cursor.getString(2));
+                 foodMap.put("fat_name", cursor.getString(3));
+                 foodMap.put("carb_name", cursor.getString(4));
+                 foodMap.put("fiber_name", cursor.getString(5));
+                 
+             } while(cursor.moveToNext());
+             
+         }
+         
+         return foodMap;
+         
+     }
      
     public boolean SaveEmployee(String name, String email) 
     {
