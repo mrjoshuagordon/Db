@@ -25,15 +25,15 @@ public class NextActivity2 extends ListActivity {
     public void onCreate(Bundle savedInstanceState) {
         Intent intent = getIntent();
         super.onCreate(savedInstanceState);
-        String value1 = intent.getStringExtra("key"); 
+        String[] value1 = intent.getStringArrayExtra("key"); 
 
- 
+     
         
         
         
         //value1 = value1 + 5;
         
-        setContentView(R.layout.tvlay2);
+        setContentView(R.layout.tvlay3);
     
        // setContentView(R.layout.activity_main); 
         
@@ -55,8 +55,8 @@ public class NextActivity2 extends ListActivity {
           
           
           ListAdapter adapter = new SimpleAdapter( NextActivity2.this,foodList, 
-                  R.layout.food_entry, new String[] { "foodId","food_name", "protein_name"},
-                  new int[] {R.id.foodId, R.id.food_name, R.id.protein_name});
+                  R.layout.food_entry1, new String[] { "foodId","restaurant","food_name", "calories_name", "protein_name", "fat_name", "carb_name"},
+                  new int[] {R.id.foodId,R.id.restaurant, R.id.food_name, R.id.calories_name, R.id.protein_name, R.id.fat_name, R.id.carb_name});
           
           // setListAdapter provides the Cursor for the ListView
           // The Cursor provides access to the database data

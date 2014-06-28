@@ -1,17 +1,17 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
+    <!--
     <EditText
         android:id="@+id/txtName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/textView1"
         android:layout_marginTop="16dp"
-        android:hint="Name"
-        android:ems="10" />
+        android:ems="10"
+        android:hint="Name" />
 
     <EditText
         android:id="@+id/txtEmail"
@@ -20,8 +20,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignRight="@+id/txtName"
         android:layout_below="@+id/txtName"
-        android:hint="Email"
-        android:ems="10" >
+        android:ems="10"
+        android:hint="Email" >
 
         <requestFocus />
     </EditText>
@@ -33,17 +33,19 @@
         android:layout_alignParentLeft="true"
         android:layout_alignRight="@+id/txtEmail"
         android:layout_below="@+id/txtEmail"
-        android:text="Save" 
-        android:onClick="SaveEmployee"/>
+        android:onClick="SaveEmployee"
+        android:text="Save" />
 
     <TableRow
         android:id="@+id/tableRow1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_alignTop="@+id/textView1" >
+        android:layout_centerVertical="true" >
     </TableRow>
 
+   
+    
     <Button
         android:id="@+id/btnSearch"
         android:layout_width="wrap_content"
@@ -52,17 +54,6 @@
         android:layout_below="@+id/btnSave"
         android:onClick="LoadEmployee"
         android:text="Load First Employee" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="26dp"
-        android:layout_toRightOf="@+id/tableRow1"
-        android:padding="@dimen/padding_medium"
-        android:text="@string/hello_world"
-        tools:context=".MainActivity" />
 
     <Button
         android:id="@+id/btnClick1"
@@ -75,15 +66,16 @@
         android:onClick="goForward"
         android:text="Load data" />
 
-    <EditText
-        android:id="@+id/queryName"
+    
+        <Button
+        android:id="@+id/btnCalculate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignTop="@+id/btnClick1"
-        android:layout_marginTop="42dp"
-        android:ems="10"
-        android:hint="query here" />
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/txtName"
+        android:onClick="goToNew"
+        android:text="Button" />
+    -->
 
     <Button
         android:id="@+id/btnCalculate"
@@ -91,17 +83,48 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/queryName"
-        android:text="Button" 
-        android:onClick="goToNew"/>
+        android:onClick="goToNew2"
+        android:text="Query DB" />
 
-      <Button
-          android:id="@+id/btnCalculate"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_alignBaseline="@+id/btnCalculate"
-          android:layout_alignBottom="@+id/btnCalculate"
-          android:layout_toRightOf="@+id/btnClick1"
-          android:onClick="goToNew2"
-          android:text="Button2" />
+    <EditText
+        android:id="@+id/queryName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:hint="@string/num_results" >
 
-</RelativeLayout>
+        <requestFocus />
+    </EditText>
+
+    <TableRow
+        android:id="@+id/tr1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+          <EditText
+            android:id="@+id/proteinNameMin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_weight="1"
+            android:hint="@string/protein_name_min" />
+        
+         <EditText
+            android:id="@+id/proteinNameMax"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/queryName"
+            android:ems="10"
+            android:hint="@string/protein_name_max"
+            android:layout_weight="1" />
+
+      
+        
+       
+        
+    </TableRow>
+
+</TableLayout>

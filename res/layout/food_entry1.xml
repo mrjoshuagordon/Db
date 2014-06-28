@@ -2,8 +2,6 @@
 <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content" >
-    
-    
 
     <TextView
         android:id="@+id/foodId"
@@ -12,13 +10,24 @@
         android:visibility="gone" />
 
     <TextView
+        android:id="@+id/restaurant"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="#444444"
+        android:textSize="12sp"
+        android:textStyle="bold" 
+        android:maxLength="8" />
+
+    <TextView
         android:id="@+id/food_name"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textColor="#444444"
         android:textSize="12sp"
-        android:textStyle="bold" />
+        android:textStyle="bold" 
+        android:maxLength="8" />
 
     <TextView
         android:id="@+id/calories_name"
@@ -46,9 +55,8 @@
         android:textColor="#444444"
         android:textSize="12sp"
         android:textStyle="bold" />
-    
-    
-     <TextView
+
+    <TextView
         android:id="@+id/carb_name"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -56,6 +64,5 @@
         android:textColor="#444444"
         android:textSize="12sp"
         android:textStyle="bold" />
-    
 
 </TableRow>

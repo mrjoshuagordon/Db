@@ -154,7 +154,7 @@ public class TestAdapter
          { 
              // String sql ="SELECT * from Employees where Name ='" + query + "'";
              
-             String sql ="SELECT * from foods limit 20"; 
+             String sql ="SELECT * from foods limit 50"; 
              
              //String sql ="SELECT EmployeeId, Name, Email FROm Employees"; 
              Cursor mCur = mDb.rawQuery(sql, null); 
@@ -207,18 +207,44 @@ public class TestAdapter
       // START NEW METHOD ATTEMPT ///////////////////////////////////////////////////////////////////////
 
      
-     public ArrayList<HashMap<String, String>> getArrayTestDataNew2(String query) 
+     public ArrayList<HashMap<String, String>> getArrayTestDataNew2(String[] query) 
      { 
       //   String[] words = new String[8]; 
+         
+         String noResultsQuery = query[0];
+         String proteinQueryMin = query[1];
+         String proteinQueryMax = query[2];
+         
+         
+//         if(proteinQuery.length()==0){
+//             proteinQuery = "0";
+//         } else{
+//             proteinQuery = proteinQuery;
+//         }
+         
+         
          
          ArrayList<HashMap<String, String>> foodArrayList = new ArrayList<HashMap<String, String>>(); 
          try 
          { 
-             // String sql ="SELECT * from Employees where Name ='" + query + "'";
+             // String sql ="SELECT * from foods limit '" + noResultsQuery + "'";
              
-             String sql ="SELECT * from foods limit 20"; 
+              String sql ="SELECT * from foods WHERE protein_name >' " + proteinQueryMin + " 'limit ' " + noResultsQuery + " '";
+              
+           //  String sql ="SELECT * from foods limit 50"; 
              
              //String sql ="SELECT EmployeeId, Name, Email FROm Employees"; 
+            
+             
+         //    String sql ="SELECT * from foods where protein_name >= '" + 
+        //     proteinQueryMin  + "' and protein_name <= ' " + proteinQueryMax + 
+        //     "' limit '" + noResultsQuery + "'";
+             
+          //  String sql ="SELECT * from foods limit 30";
+             
+             
+             
+             
              Cursor mCur = mDb.rawQuery(sql, null); 
             
              
@@ -243,12 +269,13 @@ public class TestAdapter
                          
                          foodMap.put("foodId", mCur.getString(0));
                          foodMap.put("restaurant", mCur.getString(1));
-                         foodMap.put("food_name", mCur.getString(2));
-                         foodMap.put("calories_name", mCur.getString(3));
-                         foodMap.put("protein_name", mCur.getString(4));
-                         foodMap.put("fat_name", mCur.getString(5));
-                         foodMap.put("carb_name", mCur.getString(6));
-                         foodMap.put("fiber_name", mCur.getString(7));
+                         foodMap.put("category", mCur.getString(2));
+                         foodMap.put("food_name", mCur.getString(3));
+                         foodMap.put("calories_name", mCur.getString(4));
+                         foodMap.put("protein_name", mCur.getString(5));
+                         foodMap.put("fat_name", mCur.getString(6));
+                         foodMap.put("carb_name", mCur.getString(7));
+                         foodMap.put("fiber_name", mCur.getString(8));
                          
                          foodArrayList.add(foodMap); 
                          
