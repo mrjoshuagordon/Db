@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -122,16 +123,31 @@ public class MainActivity extends Activity {
     }
 
     public void goToNew2(View v) {
+       
+        String querySort;
         EditText queryName = (EditText) findViewById(R.id.queryName);
         EditText proteinNameMin = (EditText) findViewById(R.id.proteinNameMin);
         EditText proteinNameMax = (EditText) findViewById(R.id.proteinNameMax);
 
+        
+        CheckBox checkBox = (CheckBox) findViewById(R.id.cbProtein);
+        if (checkBox.isChecked()) {
+          querySort = "protein_name"; 
+        } else{
+          querySort = "fat_name";
+        }
+        
+        
+        
+        
+        
+        
         String noResults = queryName.getText().toString();
         String proteinMin = proteinNameMin.getText().toString();
         String proteinMax = proteinNameMax.getText().toString();
 
         String params[] = {
-                noResults, proteinMin, proteinMax
+                noResults, proteinMin, proteinMax, querySort
         };
 
         Intent myIntent = new Intent(MainActivity.this, NextActivity2.class);

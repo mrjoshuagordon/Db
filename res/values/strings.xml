@@ -30,6 +30,7 @@
     <string name="add_button">ADD</string>
  <string name="item_details">Item Details</string>
     <string name="edit_button">Edit</string>
+    <string name="sort_view">Order</string>
     
     
     <string name="num_results">No. of Results</string>

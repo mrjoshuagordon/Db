@@ -123,7 +123,14 @@
              android:ems="10"
              android:hint="@string/protein_name_max"
              android:inputType="numberSigned" />
+
+         <CheckBox
+             android:id="@+id/cbProtein"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content" />
         
     </TableRow>
+
+  
 
 </TableLayout>

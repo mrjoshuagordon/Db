@@ -30,36 +30,37 @@ public final class R {
         public static final int ic_launcher=0x7f020001;
     }
     public static final class id {
-        public static final int CaloriesNameTextView=0x7f08000f;
-        public static final int RestaurantNameTextView=0x7f080009;
+        public static final int CaloriesNameTextView=0x7f080010;
+        public static final int RestaurantNameTextView=0x7f08000a;
         public static final int btnCalculate=0x7f080000;
-        public static final int calories_name=0x7f080010;
-        public static final int carbNameTextView=0x7f080018;
-        public static final int carb_name=0x7f080019;
-        public static final int editFoodTitleTextView=0x7f080007;
-        public static final int fatNameTextView=0x7f080015;
-        public static final int fat_name=0x7f080016;
-        public static final int fiberNameTextView=0x7f08001b;
-        public static final int fiber_name=0x7f08001c;
-        public static final int foodId=0x7f08001d;
-        public static final int foodNameTextView=0x7f08000c;
-        public static final int food_name=0x7f08000d;
-        public static final int listView1=0x7f080005;
-        public static final int menu_settings=0x7f08001e;
+        public static final int calories_name=0x7f080011;
+        public static final int carbNameTextView=0x7f080019;
+        public static final int carb_name=0x7f08001a;
+        public static final int cbProtein=0x7f080005;
+        public static final int editFoodTitleTextView=0x7f080008;
+        public static final int fatNameTextView=0x7f080016;
+        public static final int fat_name=0x7f080017;
+        public static final int fiberNameTextView=0x7f08001c;
+        public static final int fiber_name=0x7f08001d;
+        public static final int foodId=0x7f08001e;
+        public static final int foodNameTextView=0x7f08000d;
+        public static final int food_name=0x7f08000e;
+        public static final int listView1=0x7f080006;
+        public static final int menu_settings=0x7f08001f;
         public static final int proteinNameMax=0x7f080004;
         public static final int proteinNameMin=0x7f080003;
-        public static final int proteinNameTextView=0x7f080012;
-        public static final int protein_name=0x7f080013;
+        public static final int proteinNameTextView=0x7f080013;
+        public static final int protein_name=0x7f080014;
         public static final int queryName=0x7f080001;
-        public static final int restaurant=0x7f08000a;
-        public static final int tableRow1=0x7f080006;
-        public static final int tableRow1a=0x7f080008;
-        public static final int tableRow1b=0x7f08000e;
-        public static final int tableRow2=0x7f08000b;
-        public static final int tableRow3=0x7f080011;
-        public static final int tableRow4=0x7f080014;
-        public static final int tableRow5=0x7f080017;
-        public static final int tableRow6=0x7f08001a;
+        public static final int restaurant=0x7f08000b;
+        public static final int tableRow1=0x7f080007;
+        public static final int tableRow1a=0x7f080009;
+        public static final int tableRow1b=0x7f08000f;
+        public static final int tableRow2=0x7f08000c;
+        public static final int tableRow3=0x7f080012;
+        public static final int tableRow4=0x7f080015;
+        public static final int tableRow5=0x7f080018;
+        public static final int tableRow6=0x7f08001b;
         public static final int tr1=0x7f080002;
     }
     public static final class layout {
@@ -96,7 +97,7 @@ public final class R {
         public static final int hello_world=0x7f050001;
         public static final int item_details=0x7f05001b;
         public static final int menu_settings=0x7f050002;
-        public static final int num_results=0x7f05001d;
+        public static final int num_results=0x7f05001e;
         public static final int protein=0x7f050005;
         public static final int protein_get=0x7f050009;
         public static final int protein_name=0x7f050012;
@@ -105,6 +106,7 @@ public final class R {
         public static final int restaurant=0x7f05000b;
         public static final int save_data=0x7f050017;
         public static final int save_food=0x7f050016;
+        public static final int sort_view=0x7f05001d;
         public static final int title_activity_main=0x7f050003;
     }
     public static final class style {

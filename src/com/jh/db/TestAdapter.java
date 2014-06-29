@@ -214,13 +214,16 @@ public class TestAdapter
          String noResultsQuery = query[0];
          String proteinQueryMin = query[1];
          String proteinQueryMax = query[2];
+         String querySort = query[3];
          
          
-//         if(proteinQuery.length()==0){
-//             proteinQuery = "0";
-//         } else{
-//             proteinQuery = proteinQuery;
-//         }
+         if(proteinQueryMin.length()==0){
+             proteinQueryMin = "0";
+        } 
+         
+         if(proteinQueryMax.length()==0){
+             proteinQueryMax = "179";
+        }
          
          
          
@@ -229,18 +232,27 @@ public class TestAdapter
          { 
              // String sql ="SELECT * from foods limit '" + noResultsQuery + "'";
              
-              String sql ="SELECT * from foods WHERE protein_name >' " + proteinQueryMin + " 'limit ' " + noResultsQuery + " '";
+              String sql ="SELECT * from foods WHERE protein_name > ' " + proteinQueryMin + " ' and protein_name < ' " 
+              + proteinQueryMax  + " ' ORDER BY  " + querySort +
+              "   DESC limit ' " + noResultsQuery +  " ' ";
               
+              // String sql ="SELECT * from foods WHERE protein_name > ' " + proteinQueryMin + " ' and protein_name < ' " + proteinQueryMax +
+              //" ' limit ' " + noResultsQuery + " ' ";
+              
+              
+//              String sql ="SELECT * from foods WHERE protein_name > ' " + proteinQueryMin + " ' and protein_name < ' " 
+//                      + proteinQueryMax  + " ' ORDER BY  " + querySort +
+//                      "   DESC limit ' " + noResultsQuery +  " ' ";
            //  String sql ="SELECT * from foods limit 50"; 
              
              //String sql ="SELECT EmployeeId, Name, Email FROm Employees"; 
             
              
-         //    String sql ="SELECT * from foods where protein_name >= '" + 
-        //     proteinQueryMin  + "' and protein_name <= ' " + proteinQueryMax + 
-        //     "' limit '" + noResultsQuery + "'";
+           //  String sql ="SELECT * from foods where protein_name >= '" + 
+          //   proteinQueryMin  + "' and protein_name <= ' " + proteinQueryMax + 
+         //    "' limit '" + noResultsQuery + "'";
              
-          //  String sql ="SELECT * from foods limit 30";
+          //  String sql ="SELECT * from foods order by protein_name desc limit 30 ";
              
              
              
@@ -286,7 +298,7 @@ public class TestAdapter
                  
                  
              }           
-
+              
              return foodArrayList;
          } 
          catch (SQLException mSQLException)  
