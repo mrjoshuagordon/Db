@@ -307,20 +307,29 @@ public class TestAdapter
          
          String selectQuery = "SELECT * FROM foods WHERE foodId='" + id + "'";
          
-         Cursor cursor = mDb.rawQuery(selectQuery, null);
+         Cursor mCur = mDb.rawQuery(selectQuery, null);
          
-         if(cursor.moveToFirst()){
+         if(mCur.moveToFirst()){
              
              do{
+                 foodMap.put("foodId", mCur.getString(0));
+                 foodMap.put("restaurant", mCur.getString(1));
+                 foodMap.put("category", mCur.getString(2));
+                 foodMap.put("food_name", mCur.getString(3));
+                 foodMap.put("calories_name", mCur.getString(4));
+                 foodMap.put("protein_name", mCur.getString(5));
+                 foodMap.put("fat_name", mCur.getString(6));
+                 foodMap.put("carb_name", mCur.getString(7));
+                 foodMap.put("fiber_name", mCur.getString(8));
                  
-                 foodMap.put("foodId", cursor.getString(0));
-                 foodMap.put("food_name", cursor.getString(1));
-                 foodMap.put("protein_name", cursor.getString(2));
-                 foodMap.put("fat_name", cursor.getString(3));
-                 foodMap.put("carb_name", cursor.getString(4));
-                 foodMap.put("fiber_name", cursor.getString(5));
+//                 foodMap.put("foodId", cursor.getString(0));
+//                 foodMap.put("food_name", cursor.getString(1));
+//                 foodMap.put("protein_name", cursor.getString(2));
+//                 foodMap.put("fat_name", cursor.getString(3));
+//                 foodMap.put("carb_name", cursor.getString(4));
+//                 foodMap.put("fiber_name", cursor.getString(5));
                  
-             } while(cursor.moveToNext());
+             } while(mCur.moveToNext());
              
          }
          

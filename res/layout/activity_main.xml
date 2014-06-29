@@ -93,7 +93,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:ems="10"
-        android:hint="@string/num_results" >
+        android:hint="@string/num_results"
+        android:inputType="numberSigned" >
 
         <requestFocus />
     </EditText>
@@ -104,26 +105,24 @@
         android:layout_height="wrap_content" >
 
           <EditText
-            android:id="@+id/proteinNameMin"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:layout_weight="1"
-            android:hint="@string/protein_name_min" />
+              android:id="@+id/proteinNameMin"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"
+              android:ems="10"
+              android:hint="@string/protein_name_min"
+              android:inputType="numberSigned" />
         
          <EditText
-            android:id="@+id/proteinNameMax"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/queryName"
-            android:ems="10"
-            android:hint="@string/protein_name_max"
-            android:layout_weight="1" />
-
-      
-        
-       
+             android:id="@+id/proteinNameMax"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:layout_alignParentLeft="true"
+             android:layout_below="@+id/queryName"
+             android:layout_weight="1"
+             android:ems="10"
+             android:hint="@string/protein_name_max"
+             android:inputType="numberSigned" />
         
     </TableRow>
 

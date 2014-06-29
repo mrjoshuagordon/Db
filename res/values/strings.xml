@@ -19,7 +19,7 @@
     <string name="fat_name">Fat(g)</string>
     <string name="calories_name">Calories</string>
     <string name="carb_name">Carb(g)</string>
-    <string name="protein_name">Protein(g) Min </string>
+    <string name="protein_name">Protein(g)</string>
     <string name="protein_name_max">Protein(g) Max </string>
       <string name="protein_name_min">Protein(g) Min</string>
     <string name="fiber_name">Fiber(g)</string>
@@ -28,7 +28,7 @@
       <string name="foods_title">Foods</string> 
     <string name="delete_button">Delete</string>
     <string name="add_button">ADD</string>
- <string name="edit_food_title">Edit Contact</string>
+ <string name="item_details">Item Details</string>
     <string name="edit_button">Edit</string>
     
     

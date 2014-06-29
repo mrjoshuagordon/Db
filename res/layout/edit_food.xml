@@ -15,9 +15,36 @@
             android:layout_height="wrap_content"
             android:background="#000000"
             android:padding="@dimen/padding_5dp"
-            android:text="@string/edit_food_title"
+            android:text="@string/item_details"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#FFFFFF" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow1a"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/RestaurantNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="@dimen/padding_5dp"
+            android:text="@string/restaurant" />
+
+        <EditText
+            android:id="@+id/restaurant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:paddingRight="@dimen/padding_5dp"
+             android:textSize="@dimen/itemtextsize" >
+
+            <requestFocus />
+        </EditText>
     </TableRow>
 
     <TableRow
@@ -31,7 +58,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:paddingLeft="@dimen/padding_5dp"
-            android:text="@string/food_name" />
+            android:text="@string/food_name" 
+           />
 
         <EditText
             android:id="@+id/food_name"
@@ -40,7 +68,36 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:paddingRight="@dimen/padding_5dp" >
+            android:paddingRight="@dimen/padding_5dp" 
+             android:lines="4"
+             android:textSize="@dimen/itemtextsize">
+
+            <requestFocus />
+        </EditText>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow1b"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/CaloriesNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="@dimen/padding_5dp"
+            android:text="@string/calories_name" />
+
+        <EditText
+            android:id="@+id/calories_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:paddingRight="@dimen/padding_5dp"
+            android:textSize="@dimen/itemtextsize" >
 
             <requestFocus />
         </EditText>
@@ -66,7 +123,8 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:paddingRight="@dimen/padding_5dp" >
+            android:paddingRight="@dimen/padding_5dp"
+            android:textSize="@dimen/itemtextsize" >
         </EditText>
     </TableRow>
 
@@ -90,7 +148,8 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:paddingRight="@dimen/padding_5dp" >
+            android:paddingRight="@dimen/padding_5dp"
+            android:textSize="@dimen/itemtextsize" >
         </EditText>
     </TableRow>
 
@@ -114,7 +173,8 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:paddingRight="@dimen/padding_5dp" >
+            android:paddingRight="@dimen/padding_5dp" 
+            android:textSize="@dimen/itemtextsize">
         </EditText>
     </TableRow>
 
@@ -138,10 +198,12 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:paddingRight="@dimen/padding_5dp" >
+            android:paddingRight="@dimen/padding_5dp"
+            android:textSize="@dimen/itemtextsize" >
         </EditText>
     </TableRow>
 
+    <!--
     <TableRow
         android:id="@+id/tableRow7"
         android:layout_width="match_parent"
@@ -163,5 +225,6 @@
             android:onClick="removeFood"
             android:text="@string/delete_button" />
     </TableRow>
+    -->
 
 </TableLayout>
