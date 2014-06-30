@@ -210,20 +210,28 @@ public class TestAdapter
      public ArrayList<HashMap<String, String>> getArrayTestDataNew2(String[] query) 
      { 
       //   String[] words = new String[8]; 
-         
+         // String querySort = query[3];
          String noResultsQuery = query[0];
          String proteinQueryMin = query[1];
          String proteinQueryMax = query[2];
-         String querySort = query[3];
+         String fatQueryMin = query[3];
+         String fatQueryMax = query[4];
+         String carbQueryMin = query[5];
+         String carbQueryMax = query[6];
+         String fiberQueryMin = query[7];
+         String fiberQueryMax = query[8];
+         String querySort = query[9];
          
+                  
          
-         if(proteinQueryMin.length()==0){
-             proteinQueryMin = "0";
-        } 
-         
-         if(proteinQueryMax.length()==0){
-             proteinQueryMax = "179";
-        }
+         if(proteinQueryMin.length()==0){ proteinQueryMin = "0"; }          
+         if(proteinQueryMax.length()==0){ proteinQueryMax = "179"; }
+         if(fatQueryMin.length()==0){ fatQueryMin = "0"; }          
+         if(fatQueryMax.length()==0){ fatQueryMax = "277"; }
+         if(carbQueryMin.length()==0){ carbQueryMin = "0"; }          
+         if(carbQueryMax.length()==0){ carbQueryMax = "414"; }
+         if(fiberQueryMin.length()==0){ fiberQueryMin = "0"; }          
+         if(fiberQueryMax.length()==0){ fiberQueryMax = "38"; }
          
          
          
@@ -232,9 +240,26 @@ public class TestAdapter
          { 
              // String sql ="SELECT * from foods limit '" + noResultsQuery + "'";
              
-              String sql ="SELECT * from foods WHERE protein_name > ' " + proteinQueryMin + " ' and protein_name < ' " 
-              + proteinQueryMax  + " ' ORDER BY  " + querySort +
-              "   DESC limit ' " + noResultsQuery +  " ' ";
+              String sql ="SELECT * from foods WHERE protein_name >= ' " + proteinQueryMin 
+                      + " ' and protein_name <=' "  + proteinQueryMax  
+                      + " ' and fat_name <= ' "  + fatQueryMax  
+                      + " ' and fat_name >= ' "  + fatQueryMin  
+                      + " ' and carb_name <= ' "  + carbQueryMax  
+                      + " ' and carb_name >= ' "  + carbQueryMin
+                      + " ' and fiber_name <= ' "  + fiberQueryMax  
+                      + " ' and fiber_name >= ' "  + fiberQueryMin
+                      + " ' ORDER BY  " + querySort 
+              
+              
+              
+              + "  DESC limit ' " + noResultsQuery +  " ' ";
+              
+              
+//              String sql ="SELECT * from foods WHERE protein_name > ' " + proteinQueryMin + " ' and protein_name < ' " 
+//                      + proteinQueryMax  + " ' ORDER BY  " + querySort +
+//                      "   DESC limit ' " + noResultsQuery +  " ' ";
+//              
+              
               
               // String sql ="SELECT * from foods WHERE protein_name > ' " + proteinQueryMin + " ' and protein_name < ' " + proteinQueryMax +
               //" ' limit ' " + noResultsQuery + " ' ";
