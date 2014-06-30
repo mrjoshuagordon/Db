@@ -21,6 +21,7 @@ public class TestAdapter
     private final Context mContext; 
     private SQLiteDatabase mDb; 
     private DataBaseHelper mDbHelper; 
+    public String search;
  
     public TestAdapter(Context context)  
     { 
@@ -224,6 +225,7 @@ public class TestAdapter
          String fiberQueryMax = query[10];
          String querySort = query[11];
          String sortBy = query[12];
+         String searchQuery = query[13];
          
                   
          if(calorieQueryMin.length()==0){ calorieQueryMin = "0"; }          
@@ -236,6 +238,7 @@ public class TestAdapter
          if(carbQueryMax.length()==0){ carbQueryMax = "414"; }
          if(fiberQueryMin.length()==0){ fiberQueryMin = "0"; }          
          if(fiberQueryMax.length()==0){ fiberQueryMax = "38"; }
+         if(searchQuery.length()==0){ search = " ' "; } else{ search = "' and food_name like '% " + searchQuery + " %' "; }
          
          
          
@@ -243,6 +246,9 @@ public class TestAdapter
          try 
          { 
              // String sql ="SELECT * from foods limit '" + noResultsQuery + "'";
+             
+             
+             
              
               String sql ="SELECT * from foods WHERE protein_name >= ' " + proteinQueryMin 
                       + " ' and protein_name <=' "  + proteinQueryMax  
@@ -254,7 +260,12 @@ public class TestAdapter
                       + " ' and fiber_name >= ' "  + fiberQueryMin
                       + " ' and calories_name <= ' "  + calorieQueryMax 
                       + " ' and calories_name >= ' "  + calorieQueryMin
-                      + " ' ORDER BY  " + querySort + " "
+                      + search 
+                      
+                      
+                      
+                      
+                      + "  ORDER BY  " + querySort + " "
                       + sortBy + 
               
               

@@ -28,6 +28,7 @@ public class MainActivity extends Activity {
     private ListView lv;
     public String orderBy;
     public String sortBy;
+  
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -141,6 +142,7 @@ public class MainActivity extends Activity {
         EditText carbNameMax = (EditText) findViewById(R.id.carbNameMax);
         EditText fiberNameMin = (EditText) findViewById(R.id.fiberNameMin);
         EditText fiberNameMax = (EditText) findViewById(R.id.fiberNameMax);
+        EditText searchName = (EditText) findViewById(R.id.searchName);
 //        
 //        CheckBox checkBox = (CheckBox) findViewById(R.id.cbProtein);
 //        if (checkBox.isChecked()) {
@@ -222,12 +224,13 @@ public class MainActivity extends Activity {
         String carbMax = carbNameMax.getText().toString();
         String fiberMin = fiberNameMin.getText().toString();
         String fiberMax = fiberNameMax.getText().toString();
+        String searchNameInput = searchName.getText().toString();
 
        
         String params[] = {
                // noResults, proteinMin, proteinMax, querySort
                  noResults, calorieMin,calorieMax, proteinMin, proteinMax, fatMin, 
-                 fatMax, carbMin, carbMax, fiberMin, fiberMax, orderBy, sortBy
+                 fatMax, carbMin, carbMax, fiberMin, fiberMax, orderBy, sortBy, searchNameInput
         };
 
         Intent myIntent = new Intent(MainActivity.this, NextActivity2.class);

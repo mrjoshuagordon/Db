@@ -294,7 +294,6 @@
         android:id="@+id/radioSort"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:orientation="horizontal"
         android:text="@string/orderBy" >
 
@@ -314,5 +313,21 @@
             android:checked="true"
             android:text="@string/sortASC" />
     </RadioGroup>
+
+        <TableRow
+        android:id="@+id/tr8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/searchName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/searchFood"
+                android:inputType="text" />
+    
+       </TableRow>
+    
 
 </TableLayout>

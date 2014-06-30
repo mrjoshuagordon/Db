@@ -46,6 +46,7 @@
     <string name="num_results">No. of Results</string>
       <string name="sortASC">Ascending</string>
     <string name="sortDESC">Descending</string>
+    <string name="searchFood">Search Food</string>
 
     
       <string name="calorie_name_min">Calories Min</string>
