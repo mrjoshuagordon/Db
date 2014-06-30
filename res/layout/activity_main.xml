@@ -81,7 +81,6 @@
         android:id="@+id/btnCalculate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:onClick="goToNew2"
         android:text="Query DB" />
 
@@ -89,7 +88,6 @@
         android:id="@+id/queryName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:ems="10"
         android:hint="@string/num_results"
         android:inputType="numberSigned" >
@@ -98,160 +96,144 @@
     </EditText>
 
     <TableRow
+        android:id="@+id/tr0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <EditText
+            android:id="@+id/calorieNameMin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/calorie_name_min"
+            android:inputType="numberSigned" />
+
+        <EditText
+            android:id="@+id/calorieNameMax"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/calorie_name_max"
+            android:inputType="numberSigned" />
+    </TableRow>
+
+    <TableRow
         android:id="@+id/tr1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-          <EditText
-              android:id="@+id/proteinNameMin"
-              android:layout_width="fill_parent"
-              android:layout_height="wrap_content"
-              android:layout_weight="1"
-              android:ems="10"
-              android:hint="@string/protein_name_min"
-              android:inputType="numberSigned" />
-        
-         <EditText
-             android:id="@+id/proteinNameMax"
-             android:layout_width="fill_parent"
-             android:layout_height="wrap_content"
+        <EditText
+            android:id="@+id/proteinNameMin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/protein_name_min"
+            android:inputType="numberSigned" />
 
-             android:layout_weight="1"
-             android:ems="10"
-             android:hint="@string/protein_name_max"
-             android:inputType="numberSigned" />
-
-     <!--     <CheckBox
-             android:id="@+id/cbProtein"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content" />
-             
-              -->
-        
+        <EditText
+            android:id="@+id/proteinNameMax"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/protein_name_max"
+            android:inputType="numberSigned" />
     </TableRow>
-    
-      <TableRow
+
+    <TableRow
         android:id="@+id/tr2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-          <EditText
-              android:id="@+id/fatNameMin"
-              android:layout_width="fill_parent"
-              android:layout_height="wrap_content"
-              android:layout_weight="1"
-              android:ems="10"
-              android:hint="@string/fat_name_min"
-              android:inputType="numberSigned" />
-        
-         <EditText
-             android:id="@+id/fatNameMax"
-             android:layout_width="fill_parent"
-             android:layout_height="wrap_content"
+        <EditText
+            android:id="@+id/fatNameMin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/fat_name_min"
+            android:inputType="numberSigned" />
 
-             android:layout_weight="1"
-             android:ems="10"
-             android:hint="@string/fat_name_max"
-             android:inputType="numberSigned" />
-
-
-              
-        
+        <EditText
+            android:id="@+id/fatNameMax"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/fat_name_max"
+            android:inputType="numberSigned" />
     </TableRow>
-    
 
-      
-         <TableRow
+    <TableRow
         android:id="@+id/tr3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-          <EditText
-              android:id="@+id/carbNameMin"
-              android:layout_width="fill_parent"
-              android:layout_height="wrap_content"
-              android:layout_weight="1"
-              android:ems="10"
-              android:hint="@string/carb_name_min"
-              android:inputType="numberSigned" />
-        
-         <EditText
-             android:id="@+id/carbNameMax"
-             android:layout_width="fill_parent"
-             android:layout_height="wrap_content"
+        <EditText
+            android:id="@+id/carbNameMin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/carb_name_min"
+            android:inputType="numberSigned" />
 
-             android:layout_weight="1"
-             android:ems="10"
-             android:hint="@string/carb_name_max"
-             android:inputType="numberSigned" />
-
-
-              
-        
+        <EditText
+            android:id="@+id/carbNameMax"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/carb_name_max"
+            android:inputType="numberSigned" />
     </TableRow>
-  
 
-                <TableRow
+    <TableRow
         android:id="@+id/tr4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-          <EditText
-              android:id="@+id/fiberNameMin"
-              android:layout_width="fill_parent"
-              android:layout_height="wrap_content"
-              android:layout_weight="1"
-              android:ems="10"
-              android:hint="@string/fiber_name_min"
-              android:inputType="numberSigned" />
-        
-         <EditText
-             android:id="@+id/fiberNameMax"
-             android:layout_width="fill_parent"
-             android:layout_height="wrap_content"
+        <EditText
+            android:id="@+id/fiberNameMin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/fiber_name_min"
+            android:inputType="numberSigned" />
 
-             android:layout_weight="1"
-             android:ems="10"
-             android:hint="@string/fiber_name_max"
-             android:inputType="numberSigned" />
-
-
-              
-        
+        <EditText
+            android:id="@+id/fiberNameMax"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/fiber_name_max"
+            android:inputType="numberSigned" />
     </TableRow>
-    
-                   <TableRow
+
+    <TableRow
         android:id="@+id/tr5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-         
-        
-         <TextView
-             android:id="@+id/orderBy"
-             android:layout_width="fill_parent"
-             android:layout_height="wrap_content"
-
-             android:layout_weight="1"
-             android:ems="10"
-             android:text="@string/orderBy"
-             android:textColor="#000"
-         />
-
-
-              
-        
+        <TextView
+            android:id="@+id/orderBy"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:text="@string/orderBy"
+            android:textColor="#000" />
     </TableRow>
-                
-                
-                
-         
-                
-                   <RadioGroup
+
+    <RadioGroup
         android:id="@+id/radioMacro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:orientation="horizontal"
         android:text="@string/orderBy" >
 
@@ -292,7 +274,45 @@
             android:layout_weight="1"
             android:text="@string/fiberRadio" />
     </RadioGroup>
-                
-                
-         
+
+    <TableRow
+        android:id="@+id/tr7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/sortBy"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:text="@string/sortBy"
+            android:textColor="#000" />
+    </TableRow>
+
+    <RadioGroup
+        android:id="@+id/radioSort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:text="@string/orderBy" >
+
+        <RadioButton
+            android:id="@+id/sortDESC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="@string/sortDESC" />
+
+        <RadioButton
+            android:id="@+id/sortASC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="@string/sortASC" />
+    </RadioGroup>
+
 </TableLayout>

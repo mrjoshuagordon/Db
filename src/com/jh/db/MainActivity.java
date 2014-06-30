@@ -27,6 +27,7 @@ import java.util.List;
 public class MainActivity extends Activity {
     private ListView lv;
     public String orderBy;
+    public String sortBy;
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -130,6 +131,8 @@ public class MainActivity extends Activity {
         String querySort;
        
         EditText queryName = (EditText) findViewById(R.id.queryName);
+        EditText calorieNameMin = (EditText) findViewById(R.id.calorieNameMin);
+        EditText calorieNameMax = (EditText) findViewById(R.id.calorieNameMax);
         EditText proteinNameMin = (EditText) findViewById(R.id.proteinNameMin);
         EditText proteinNameMax = (EditText) findViewById(R.id.proteinNameMax);
         EditText fatNameMin = (EditText) findViewById(R.id.fatNameMin);
@@ -148,18 +151,6 @@ public class MainActivity extends Activity {
         
         RadioGroup g = (RadioGroup) findViewById(R.id.radioMacro); 
         
-     // Returns an integer which represents the selected radio button's ID
-      //  int selected = g.getCheckedRadioButtonId();
-      
-     // Gets a reference to our "selected" radio button
-      //  RadioButton b = (RadioButton) findViewById(selected);
-      
-     // Now you can get the text or whatever you want from the "selected" radio button
-     //  querySort = b.getText().toString();
-        
-   
-      // RadioGroup g = (RadioGroup) findViewById(R.id.rBtnDigits);
-     //  String orderBy;
         
        switch (g.getCheckedRadioButtonId())
        {
@@ -189,6 +180,24 @@ public class MainActivity extends Activity {
        }
        
        
+       RadioGroup o = (RadioGroup) findViewById(R.id.radioSort); 
+       
+       
+       switch (o.getCheckedRadioButtonId())
+       {
+       case R.id.sortASC:
+           sortBy = "ASC";
+       break;
+        
+       case R.id.sortDESC:
+           sortBy = "DESC";
+       break;
+            
+       
+       }
+       
+       
+       
        //    String orderBy = null;
         
 //        if(querySort== "radioCalories"){  orderBy = "calories_name"; }
@@ -203,6 +212,8 @@ public class MainActivity extends Activity {
         
         
         String noResults = queryName.getText().toString();
+        String calorieMin = calorieNameMin.getText().toString();
+        String calorieMax = calorieNameMax.getText().toString();
         String proteinMin = proteinNameMin.getText().toString();
         String proteinMax = proteinNameMax.getText().toString();
         String fatMin = fatNameMin.getText().toString();
@@ -215,7 +226,8 @@ public class MainActivity extends Activity {
        
         String params[] = {
                // noResults, proteinMin, proteinMax, querySort
-                 noResults, proteinMin, proteinMax, fatMin, fatMax, carbMin, carbMax, fiberMin, fiberMax, orderBy
+                 noResults, calorieMin,calorieMax, proteinMin, proteinMax, fatMin, 
+                 fatMax, carbMin, carbMax, fiberMin, fiberMax, orderBy, sortBy
         };
 
         Intent myIntent = new Intent(MainActivity.this, NextActivity2.class);

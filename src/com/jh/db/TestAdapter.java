@@ -212,18 +212,22 @@ public class TestAdapter
       //   String[] words = new String[8]; 
          // String querySort = query[3];
          String noResultsQuery = query[0];
-         String proteinQueryMin = query[1];
-         String proteinQueryMax = query[2];
-         String fatQueryMin = query[3];
-         String fatQueryMax = query[4];
-         String carbQueryMin = query[5];
-         String carbQueryMax = query[6];
-         String fiberQueryMin = query[7];
-         String fiberQueryMax = query[8];
-         String querySort = query[9];
+         String calorieQueryMin = query[1];
+         String calorieQueryMax = query[2];
+         String proteinQueryMin = query[3];
+         String proteinQueryMax = query[4];
+         String fatQueryMin = query[5];
+         String fatQueryMax = query[6];
+         String carbQueryMin = query[7];
+         String carbQueryMax = query[8];
+         String fiberQueryMin = query[9];
+         String fiberQueryMax = query[10];
+         String querySort = query[11];
+         String sortBy = query[12];
          
                   
-         
+         if(calorieQueryMin.length()==0){ calorieQueryMin = "0"; }          
+         if(calorieQueryMax.length()==0){ calorieQueryMax = "4580"; }
          if(proteinQueryMin.length()==0){ proteinQueryMin = "0"; }          
          if(proteinQueryMax.length()==0){ proteinQueryMax = "179"; }
          if(fatQueryMin.length()==0){ fatQueryMin = "0"; }          
@@ -248,11 +252,14 @@ public class TestAdapter
                       + " ' and carb_name >= ' "  + carbQueryMin
                       + " ' and fiber_name <= ' "  + fiberQueryMax  
                       + " ' and fiber_name >= ' "  + fiberQueryMin
-                      + " ' ORDER BY  " + querySort 
+                      + " ' and calories_name <= ' "  + calorieQueryMax 
+                      + " ' and calories_name >= ' "  + calorieQueryMin
+                      + " ' ORDER BY  " + querySort + " "
+                      + sortBy + 
               
               
               
-              + "  DESC limit ' " + noResultsQuery +  " ' ";
+               "  limit ' " + noResultsQuery +  " ' ";
               
               
 //              String sql ="SELECT * from foods WHERE protein_name > ' " + proteinQueryMin + " ' and protein_name < ' " 
