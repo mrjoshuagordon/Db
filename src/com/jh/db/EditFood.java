@@ -107,7 +107,9 @@ public class EditFood extends Activity{
         
         String foodId = theIntent.getStringExtra("foodId");
         
-        food_name= (EditText) findViewById(R.id.food_name);
+        restaurant = (EditText) findViewById(R.id.restaurant);
+        food_name= (EditText) findViewById(R.id.food_name);       
+        calories_name = (EditText) findViewById(R.id.calories_name);
         protein_name = (EditText) findViewById(R.id.protein_name);
         fat_name = (EditText) findViewById(R.id.fat_name);
         carb_name = (EditText) findViewById(R.id.carb_name);
@@ -117,9 +119,9 @@ public class EditFood extends Activity{
        // Name = (EditText) findViewById(R.id.Name);
       //  Email = (EditText) findViewById(R.id.Email);
      //   String email = Email.getText().toString();
-      
-        
+        String restaurant_edit = restaurant.getText().toString();       
         String food_name_edit = food_name.getText().toString();
+        String calories_name_edit = calories_name.getText().toString();
         String protein_name_edit = protein_name.getText().toString();
         String fat_name_edit = fat_name.getText().toString();
         String carb_name_edit = carb_name.getText().toString();
@@ -129,9 +131,11 @@ public class EditFood extends Activity{
         
        
         
-       mDbHelper.EditFoodMethod(food_name_edit, protein_name_edit,fat_name_edit, carb_name_edit, fiber_name_edit,foodId);
+       mDbHelper.EditFoodMethod(restaurant_edit, calories_name_edit,food_name_edit, protein_name_edit,fat_name_edit, carb_name_edit, fiber_name_edit,foodId);
        
        mDbHelper.close(); 
+       
+       Utility.ShowMessageBox(this,"Data saved.");
        
        this.callMain(v);
        

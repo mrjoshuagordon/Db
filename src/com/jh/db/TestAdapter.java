@@ -227,7 +227,7 @@ public class TestAdapter
          String sortBy = query[12];
          String searchQuery = query[13];
          
-                  
+         if(noResultsQuery.length()==0){ noResultsQuery = "1"; }          
          if(calorieQueryMin.length()==0){ calorieQueryMin = "0"; }          
          if(calorieQueryMax.length()==0){ calorieQueryMax = "4580"; }
          if(proteinQueryMin.length()==0){ proteinQueryMin = "0"; }          
@@ -420,21 +420,21 @@ public class TestAdapter
      
      
      
-     public boolean EditFoodMethod(String food_name, String protein_name, String fat_name, String carb_name, String fiber_name,String id) 
+     public boolean EditFoodMethod(String restaurant, String calories_name, String food_name, String protein_name, String fat_name, String carb_name, String fiber_name,String id) 
      {
          try
          {
-
-             
-            String sql_food_name = "Update foods set food_name = ' " + food_name + " ' where foodId = ' " + id + " ' ";
-            String sql_protein_name = "Update foods set protein_name = ' " + protein_name + " ' where foodId = ' " + id + " ' ";
-            String sql_fat_name = "Update foods set fat_name = ' " + fat_name + " ' where foodId = ' " + id + " ' ";
-            String sql_carb_name = "Update foods set carb_name = ' " + carb_name + " ' where foodId = ' " + id + " ' ";
-            String sql_fiber_name = "Update foods set fiber_name = ' " + fiber_name + " ' where foodId = ' " + id + " ' ";
+            String sql_restaurant = "Update foods set restaurant = '" + restaurant + "' where foodId = ' " + id + " ' ";
+            String sql_calories_name = "Update foods set calories_name =' " + calories_name + "' where foodId = ' " + id + " ' ";             
+            String sql_food_name = "Update foods set food_name = '" + food_name + " 'where foodId = ' " + id + " ' ";
+            String sql_protein_name = "Update foods set protein_name = '" + protein_name + " 'where foodId = ' " + id + " ' ";
+            String sql_fat_name = "Update foods set fat_name = '" + fat_name + "' where foodId = ' " + id + " ' ";
+            String sql_carb_name = "Update foods set carb_name = '" + carb_name + " 'where foodId = ' " + id + " ' ";
+            String sql_fiber_name = "Update foods set fiber_name = '" + fiber_name + " 'where foodId = ' " + id + " ' ";
             
             
-            
-             
+            mDb.execSQL(sql_restaurant);
+            mDb.execSQL(sql_calories_name);             
             mDb.execSQL(sql_food_name);
             mDb.execSQL(sql_protein_name);
             mDb.execSQL(sql_fat_name);
