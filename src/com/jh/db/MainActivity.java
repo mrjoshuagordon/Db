@@ -70,28 +70,28 @@ public class MainActivity extends Activity {
         return true;
     }
 
-    // public void SaveEmployee(View v)
-    // {
-    // EditText txtName = (EditText)findViewById(R.id.txtName);
-    // EditText txtEmail = (EditText)findViewById(R.id.txtEmail);
-    //
-    // String name = txtName.getText().toString();
-    // String email = txtEmail.getText().toString();
-    //
-    //
-    // TestAdapter mDbHelper = new TestAdapter(this);
-    // mDbHelper.createDatabase();
-    // mDbHelper.open();
-    //
-    // if(mDbHelper.SaveEmployee(name, email))
-    // {
-    // Utility.ShowMessageBox(this,"Data saved.");
-    // }
-    // else
-    // {
-    // Utility.ShowMessageBox(this,"OOPS try again!");
-    // }
-    // }
+//     public void SaveEmployee(View v)
+//     {
+//     EditText txtName = (EditText)findViewById(R.id.txtName);
+//     EditText txtEmail = (EditText)findViewById(R.id.txtEmail);
+//    
+//     String name = txtName.getText().toString();
+//     String email = txtEmail.getText().toString();
+//    
+//    
+//     TestAdapter mDbHelper = new TestAdapter(this);
+//     mDbHelper.createDatabase();
+//     mDbHelper.open();
+//    
+//     if(mDbHelper.SaveEmployee(name, email))
+//     {
+//     Utility.ShowMessageBox(this,"Data saved.");
+//     }
+//     else
+//     {
+//     Utility.ShowMessageBox(this,"OOPS try again!");
+//     }
+//     }
     //
     // public void LoadEmployee(View v)
     // {

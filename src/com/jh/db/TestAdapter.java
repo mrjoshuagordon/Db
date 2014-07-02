@@ -49,7 +49,7 @@ public class TestAdapter
         { 
             mDbHelper.openDataBase(); 
             mDbHelper.close(); 
-            mDb = mDbHelper.getReadableDatabase(); 
+            mDb = mDbHelper.getWritableDatabase(); 
         }  
         catch (SQLException mSQLException)  
         { 
@@ -392,26 +392,72 @@ public class TestAdapter
          
      }
      
-    public boolean SaveEmployee(String name, String email) 
-    {
-        try
-        {
-            ContentValues cv = new ContentValues();
-            cv.put("Name", name);
-            cv.put("Email", email);
-            
-            mDb.insert("Employees", null, cv);
+     
+     
+     
+     
+//    public boolean SaveEmployee(String food_name, String restaurant) 
+//    {
+//        try
+//        {
+//            ContentValues cv = new ContentValues();
+//            cv.put("food_name", food_name);
+//            cv.put("restaurant", restaurant);
+//            
+//            mDb.insert("foods", null, cv);
+//
+//            Log.d("SaveEmployee", "informationsaved");
+//            return true;
+//            
+//        }
+//        catch(Exception ex)
+//        {
+//            Log.d("SaveEmployee", ex.toString());
+//            return false;
+//        }
+//    }
+     
+     
+     
+     
+     public boolean EditFoodMethod(String food_name, String protein_name, String fat_name, String carb_name, String fiber_name,String id) 
+     {
+         try
+         {
 
-            Log.d("SaveEmployee", "informationsaved");
-            return true;
+             
+            String sql_food_name = "Update foods set food_name = ' " + food_name + " ' where foodId = ' " + id + " ' ";
+            String sql_protein_name = "Update foods set protein_name = ' " + protein_name + " ' where foodId = ' " + id + " ' ";
+            String sql_fat_name = "Update foods set fat_name = ' " + fat_name + " ' where foodId = ' " + id + " ' ";
+            String sql_carb_name = "Update foods set carb_name = ' " + carb_name + " ' where foodId = ' " + id + " ' ";
+            String sql_fiber_name = "Update foods set fiber_name = ' " + fiber_name + " ' where foodId = ' " + id + " ' ";
             
-        }
-        catch(Exception ex)
-        {
-            Log.d("SaveEmployee", ex.toString());
-            return false;
-        }
-    }
+            
+            
+             
+            mDb.execSQL(sql_food_name);
+            mDb.execSQL(sql_protein_name);
+            mDb.execSQL(sql_fat_name);
+            mDb.execSQL(sql_carb_name);
+            mDb.execSQL(sql_fiber_name);
+            
+          
+            
+             
+             
+             
+             Log.d("SaveFood", "informationsaved");
+             return true;
+             
+         }
+         catch(Exception ex)
+         {
+             Log.d("SaveEmployee", ex.toString());
+             return false;
+         }
+     }
+     
+     
      
     
  

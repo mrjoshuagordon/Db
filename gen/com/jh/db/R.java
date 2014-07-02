@@ -40,6 +40,8 @@ public final class R {
         public static final int carbNameMin=0x7f08000c;
         public static final int carbNameTextView=0x7f080033;
         public static final int carb_name=0x7f080034;
+        public static final int deleteButton=0x7f08003a;
+        public static final int editButton=0x7f080039;
         public static final int editFoodTitleTextView=0x7f080022;
         public static final int fatNameMax=0x7f08000a;
         public static final int fatNameMin=0x7f080009;
@@ -49,11 +51,11 @@ public final class R {
         public static final int fiberNameMin=0x7f08000f;
         public static final int fiberNameTextView=0x7f080036;
         public static final int fiber_name=0x7f080037;
-        public static final int foodId=0x7f080038;
+        public static final int foodId=0x7f08003b;
         public static final int foodNameTextView=0x7f080027;
         public static final int food_name=0x7f080028;
         public static final int listView1=0x7f080020;
-        public static final int menu_settings=0x7f080039;
+        public static final int menu_settings=0x7f08003c;
         public static final int orderBy=0x7f080012;
         public static final int proteinNameMax=0x7f080007;
         public static final int proteinNameMin=0x7f080006;
@@ -80,6 +82,7 @@ public final class R {
         public static final int tableRow4=0x7f08002f;
         public static final int tableRow5=0x7f080032;
         public static final int tableRow6=0x7f080035;
+        public static final int tableRow7=0x7f080038;
         public static final int tr0=0x7f080002;
         public static final int tr1=0x7f080005;
         public static final int tr2=0x7f080008;
@@ -109,8 +112,8 @@ public final class R {
         public static final int add_food=0x7f05000d;
         public static final int app_name=0x7f050000;
         public static final int calorieRadio=0x7f05001e;
-        public static final int calorie_name_max=0x7f050030;
-        public static final int calorie_name_min=0x7f05002f;
+        public static final int calorie_name_max=0x7f050031;
+        public static final int calorie_name_min=0x7f050030;
         public static final int calories_name=0x7f050010;
         public static final int carbRadio=0x7f050023;
         public static final int carb_name=0x7f050011;
@@ -135,6 +138,7 @@ public final class R {
         public static final int foods_title=0x7f050018;
         public static final int hello_world=0x7f050001;
         public static final int item_details=0x7f05001b;
+        public static final int map_button=0x7f05002f;
         public static final int menu_settings=0x7f050002;
         public static final int num_results=0x7f05002b;
         public static final int orderBy=0x7f050020;
