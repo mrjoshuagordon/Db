@@ -53,17 +53,72 @@ public class AddFood extends Activity{
         restaurant = (EditText) findViewById(R.id.restaurant);
         category = (EditText) findViewById(R.id.food_name); 
         food_name = (EditText) findViewById(R.id.food_name);       
-//        calories_name = (EditText) findViewById(R.id.calories_name);
-//        protein_name = (EditText) findViewById(R.id.protein_name);
-//        fat_name = (EditText) findViewById(R.id.fat_name);
-//        carb_name = (EditText) findViewById(R.id.carb_name);
-//        fiber_name = (EditText) findViewById(R.id.fiber_name);
+        calories_name = (EditText) findViewById(R.id.calories_name);
+        protein_name = (EditText) findViewById(R.id.protein_name);
+        fat_name = (EditText) findViewById(R.id.fat_name);
+        carb_name = (EditText) findViewById(R.id.carb_name);
+        fiber_name = (EditText) findViewById(R.id.fiber_name);
         
-      
+//        double calories_name_text = 0.0;
+//        double protein_name_text = 0.0;
+//        double fat_name_text = 0.0;
+//        double carb_name_text = 0.0;
+//        double fiber_name_text = 0.0;
+        
+        double calories_name_text1;
+        double protein_name_text1;
+        double fat_name_text1;
+        double carb_name_text1;
+        double fiber_name_text1;
+        
         String restaurant_text = restaurant.getText().toString();
         String food_name_text = food_name.getText().toString();
         String category_name_text = category.getText().toString();
-        double fill = 0.0;
+        
+        String temp_cal = calories_name.getText().toString();        
+        if(temp_cal == null || temp_cal == "" || temp_cal.length()==0 ){ calories_name_text1 = 0.0; } else{ calories_name_text1 =  Double.parseDouble(temp_cal); }
+     
+        String temp_pro = protein_name.getText().toString();        
+        if(temp_pro == null || temp_pro == "" || temp_pro.length()==0 ){ protein_name_text1 = 0.0; } else{ protein_name_text1 =  Double.parseDouble(temp_pro); }
+        
+        String temp_fat = fat_name.getText().toString();        
+        if(temp_fat == null || temp_fat == "" || temp_fat.length()==0 ){ fat_name_text1 = 0.0; } else{ fat_name_text1 =  Double.parseDouble(temp_fat); }
+     
+        String temp_carb = carb_name.getText().toString();        
+        if(temp_carb == null || temp_carb == "" || temp_carb.length()==0 ){ carb_name_text1 = 0.0; } else{ carb_name_text1 =  Double.parseDouble(temp_carb); }
+     
+        String temp_fiber = fiber_name.getText().toString();        
+        if(temp_fiber == null || temp_fiber == "" || temp_fiber.length()==0 ){ fiber_name_text1 = 0.0; } else{ fiber_name_text1 =  Double.parseDouble(temp_fiber); }
+     
+        
+
+        
+        
+//        String temp_pro = protein_name.getText().toString();
+//        protein_name_text1 = (double) Double.parseDouble(temp_pro);
+//        
+//        String temp_fat = fat_name.getText().toString();
+//        fat_name_text1 = (double) Double.parseDouble(temp_fat);
+//        
+//        String temp_carb = carb_name.getText().toString();
+//        carb_name_text1 = (double) Double.parseDouble(temp_carb);
+//        
+//        String temp_fiber = fiber_name.getText().toString();
+//        fiber_name_text1 = (double) Double.parseDouble(temp_fiber);
+      
+           
+        
+        //  calories_name_text = Double.parseDouble(calories_name.getText().toString());
+    //    protein_name_text = Double.parseDouble(protein_name.getText().toString());
+  //      fat_name_text = Double.parseDouble(fat_name.getText().toString());
+   //     carb_name_text = Double.parseDouble(carb_name.getText().toString());
+   //     fiber_name_text = Double.parseDouble(fiber_name.getText().toString());
+        
+        
+        
+        
+        
+   //     double fill = 0.0;
 //        String calories_name_text = calories_name.getText().toString();
 //        String protein_name_text = protein_name.getText().toString();
 //        String fat_name_text = fat_name.getText().toString();
@@ -72,7 +127,8 @@ public class AddFood extends Activity{
      
         
         
-        mDbHelper.AddEmployee(restaurant_text,  category_name_text, food_name_text, fill,fill, fill, fill, fill);
+        mDbHelper.AddEmployee(restaurant_text,  category_name_text, food_name_text, calories_name_text1,
+                protein_name_text1, fat_name_text1,carb_name_text1, fiber_name_text1);
         
         mDbHelper.close();  
         
