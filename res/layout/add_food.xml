@@ -214,16 +214,8 @@
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="EditFoodMethod"
-            android:text="@string/edit_button" />
-
-        <Button
-            android:id="@+id/addButton"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="goAddFood"
-            android:text="@string/add_button" />
+            android:onClick="AddEmployee"
+            android:text="Add this Food" />
     </TableRow>
     
 

@@ -27,6 +27,7 @@
        <activity android:label="@string/app_name" android:name="com.jh.db.NextActivity1"/> 
        <activity android:label="@string/app_name" android:name="com.jh.db.NextActivity2"/> 
         <activity android:label="@string/app_name" android:name="com.jh.db.EditFood"/> 
+        <activity android:label="@string/app_name" android:name="com.jh.db.AddFood"/> 
     </application>
 
 </manifest>

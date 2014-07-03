@@ -49,7 +49,7 @@ public class TestAdapter
         { 
             mDbHelper.openDataBase(); 
             mDbHelper.close(); 
-            mDb = mDbHelper.getWritableDatabase(); 
+            mDb = mDbHelper.getReadableDatabase(); 
         }  
         catch (SQLException mSQLException)  
         { 
@@ -238,7 +238,7 @@ public class TestAdapter
          if(carbQueryMax.length()==0){ carbQueryMax = "414"; }
          if(fiberQueryMin.length()==0){ fiberQueryMin = "0"; }          
          if(fiberQueryMax.length()==0){ fiberQueryMax = "38"; }
-         if(searchQuery.length()==0){ search = " ' "; } else{ search = "' and food_name like '% " + searchQuery + " %' "; }
+         if(searchQuery.length()==0){ search = " ' "; } else{ search = "' and food_name like '%" + searchQuery + "%' "; }
          
          
          
@@ -391,6 +391,62 @@ public class TestAdapter
          return foodMap;
          
      }
+     
+     
+     
+     
+     public boolean AddEmployee(String restaurant, String category_name, String food_name, double fill, double fill1, double fill2, double fill3, double fill4) 
+     {
+         try
+         {
+      
+            
+          
+             
+             
+//             String sql = "INSERT INTO foods( restaurant, category, food_name," +
+//             		" calories_name, carb_name, fat_name," +
+//             		" protein_name,fiber_name, sodium_name, sugar_name ) " +
+//             		"VALUES  ('" + restaurant + "', " + "'1'" + " , '" + food_name +  "', '1'" + " , " +  "'1'" + " , " +  "'1'" + " , " +  "'1'" + " , " +  "'1'" + " , " +  "'1'" + " , " +  "'1'" +  ") " ; 
+//             
+//             
+//             mDb.execSQL(sql);
+             ContentValues cv = new ContentValues();
+             cv.put("restaurant", restaurant);
+             cv.put("category", restaurant);
+             cv.put("food_name", food_name);
+             cv.put("calories_name", fill);
+             cv.put("protein_name", fill1);
+             cv.put("fat_name", fill2);
+             cv.put("carb_name", fill3);
+             cv.put("fiber_name", fill4);
+             
+             
+             mDb.insert("foods", null, cv);
+             
+             mDb.close();
+
+
+             Log.d("SaveEmployee", "informationsaved bitch");
+             return true;
+             
+         }
+         catch(Exception ex)
+         {
+             Log.d("SaveEmployee", ex.toString());
+             return false;
+         }
+         
+     }
+      
+     
+     
+     
+     
+     
+  
+    
+     
      
      
      

@@ -1,9 +1,5 @@
 package com.jh.db;
 
-
-import java.util.HashMap;
-
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,88 +8,89 @@ import android.widget.EditText;
 
 
 
+import java.util.HashMap;
 
+public class AddFood extends Activity{
 
-public class EditFood extends Activity{
     
+
     EditText food_name;
     EditText protein_name;
     EditText fat_name;
     EditText carb_name;
     EditText fiber_name;
     EditText restaurant;
+    EditText category;
     EditText calories_name;
  
     
-    DBTools dbTools = new DBTools(this);
 
     
     public void onCreate(Bundle savedInstanceState){
         
-        TestAdapter mDbHelper = new TestAdapter(this);         
-        mDbHelper.createDatabase();       
-        mDbHelper.open(); 
+      
         
         
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.edit_food);
-        restaurant = (EditText) findViewById(R.id.restaurant);
-        calories_name = (EditText) findViewById(R.id.calories_name);
-        food_name= (EditText) findViewById(R.id.food_name);
-        protein_name = (EditText) findViewById(R.id.protein_name);
-        fat_name = (EditText) findViewById(R.id.fat_name);
-        carb_name = (EditText) findViewById(R.id.carb_name);
-        fiber_name = (EditText) findViewById(R.id.fiber_name);
-        
-        Intent theIntent = getIntent();
-        
-        String foodId = theIntent.getStringExtra("foodId");
-        
-        HashMap<String, String> foodList = mDbHelper.getFoodInfo(foodId);
-        
-        if(foodList.size() != 0){
-            
-            food_name.setText(foodList.get("food_name"));
-            restaurant.setText(foodList.get("restaurant"));
-            calories_name.setText(foodList.get("calories_name"));
-            protein_name.setText(foodList.get("protein_name"));
-            fat_name.setText(foodList.get("fat_name"));
-            carb_name.setText(foodList.get("carb_name"));
-            fiber_name.setText(foodList.get("fiber_name"));
-            
-        }
-        
-
+        setContentView(R.layout.add_food);
+   
+     
         
         
     }
     
 
     
-//    public void SaveEmployee(View v)
-//    {
-//    EditText food_name = (EditText)findViewById(R.id.food_name);
-//    EditText restaurant = (EditText)findViewById(R.id.restaurant);
-//   
-//    String foodString = food_name.getText().toString();
-//    String restaurantString = restaurant.getText().toString();
-//   
-//   
-//    TestAdapter mDbHelper = new TestAdapter(this);
-//    mDbHelper.createDatabase();
-//    mDbHelper.open();
-//   
-//    if(mDbHelper.SaveEmployee(foodString, restaurantString))
-//    {
-//    Utility.ShowMessageBox(this,"Data saved.");
-//    }
-//    else
-//    {
-//    Utility.ShowMessageBox(this,"OOPS try again!");
-//    }
-//    
-//    }
-//    
+    
+    public void AddEmployee(View v)
+    {
+        
+        
+        TestAdapter mDbHelper = new TestAdapter(this);         
+        mDbHelper.createDatabase();       
+        mDbHelper.open(); 
+        
+        restaurant = (EditText) findViewById(R.id.restaurant);
+        category = (EditText) findViewById(R.id.food_name); 
+        food_name = (EditText) findViewById(R.id.food_name);       
+//        calories_name = (EditText) findViewById(R.id.calories_name);
+//        protein_name = (EditText) findViewById(R.id.protein_name);
+//        fat_name = (EditText) findViewById(R.id.fat_name);
+//        carb_name = (EditText) findViewById(R.id.carb_name);
+//        fiber_name = (EditText) findViewById(R.id.fiber_name);
+        
+      
+        String restaurant_text = restaurant.getText().toString();
+        String food_name_text = food_name.getText().toString();
+        String category_name_text = category.getText().toString();
+        double fill = 0.0;
+//        String calories_name_text = calories_name.getText().toString();
+//        String protein_name_text = protein_name.getText().toString();
+//        String fat_name_text = fat_name.getText().toString();
+//        String carb_name_text = carb_name.getText().toString();
+//        String fiber_name_text = fiber_name.getText().toString();
+     
+        
+        
+        mDbHelper.AddEmployee(restaurant_text,  category_name_text, food_name_text, fill,fill, fill, fill, fill);
+        
+        mDbHelper.close();  
+        
+        
+        
+        Utility.ShowMessageBox(this,"Data saved.");
+        
+        this.callMain(v);
+ 
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     public void EditFoodMethod(View v)
@@ -175,26 +172,13 @@ public class EditFood extends Activity{
 //        
 //    }
 //    
-    
-    
-    public void goAddFood (View view){
+    public void callMain(View view){
         
-        Intent objIntent = new Intent(getApplication(), AddFood.class);
+        Intent objIntent = new Intent(getApplication(), MainActivity.class);
         
         startActivity(objIntent);
         
     }
-    
-    
-    
-    
-public void callMain(View view){
-    
-    Intent objIntent = new Intent(getApplication(), MainActivity.class);
-    
-    startActivity(objIntent);
-    
-}
     
     
     public void callMainActivity(View view){

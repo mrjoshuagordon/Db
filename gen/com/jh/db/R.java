@@ -32,6 +32,7 @@ public final class R {
     public static final class id {
         public static final int CaloriesNameTextView=0x7f08002a;
         public static final int RestaurantNameTextView=0x7f080024;
+        public static final int addButton=0x7f08003a;
         public static final int btnCalculate=0x7f080000;
         public static final int calorieNameMax=0x7f080004;
         public static final int calorieNameMin=0x7f080003;
@@ -40,7 +41,6 @@ public final class R {
         public static final int carbNameMin=0x7f08000c;
         public static final int carbNameTextView=0x7f080033;
         public static final int carb_name=0x7f080034;
-        public static final int deleteButton=0x7f08003a;
         public static final int editButton=0x7f080039;
         public static final int editFoodTitleTextView=0x7f080022;
         public static final int fatNameMax=0x7f08000a;
@@ -95,13 +95,14 @@ public final class R {
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int acts=0x7f030001;
-        public static final int edit_food=0x7f030002;
-        public static final int food_entry=0x7f030003;
-        public static final int food_entry1=0x7f030004;
-        public static final int radio_lay=0x7f030005;
-        public static final int tvlay=0x7f030006;
-        public static final int tvlay2=0x7f030007;
-        public static final int tvlay3=0x7f030008;
+        public static final int add_food=0x7f030002;
+        public static final int edit_food=0x7f030003;
+        public static final int food_entry=0x7f030004;
+        public static final int food_entry1=0x7f030005;
+        public static final int radio_lay=0x7f030006;
+        public static final int tvlay=0x7f030007;
+        public static final int tvlay2=0x7f030008;
+        public static final int tvlay3=0x7f030009;
     }
     public static final class menu {
         public static final int main=0x7f070000;
