@@ -22,6 +22,7 @@ public class TestAdapter
     private SQLiteDatabase mDb; 
     private DataBaseHelper mDbHelper; 
     public String search;
+    public String searchRest;
  
     public TestAdapter(Context context)  
     { 
@@ -226,6 +227,7 @@ public class TestAdapter
          String querySort = query[11];
          String sortBy = query[12];
          String searchQuery = query[13];
+         String searchRestaurant = query[14];
          
          if(noResultsQuery.length()==0){ noResultsQuery = "10"; }          
          if(calorieQueryMin.length()==0){ calorieQueryMin = "0"; }          
@@ -239,7 +241,7 @@ public class TestAdapter
          if(fiberQueryMin.length()==0){ fiberQueryMin = "0"; }          
          if(fiberQueryMax.length()==0){ fiberQueryMax = "38"; }
          if(searchQuery.length()==0){ search = " ' "; } else{ search = "' and food_name like '%" + searchQuery + "%' "; }
-         
+         if(searchRestaurant.length()==0){ searchRest = ""; } else{ searchRest = " and restaurant like '%" + searchRestaurant + "%' "; }
          
          
          ArrayList<HashMap<String, String>> foodArrayList = new ArrayList<HashMap<String, String>>(); 
@@ -260,7 +262,7 @@ public class TestAdapter
                       + " ' and fiber_name >= ' "  + fiberQueryMin
                       + " ' and calories_name <= ' "  + calorieQueryMax 
                       + " ' and calories_name >= ' "  + calorieQueryMin
-                      + search 
+                      + search + searchRest
                       
                       
                       

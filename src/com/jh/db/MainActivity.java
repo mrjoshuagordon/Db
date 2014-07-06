@@ -232,6 +232,7 @@ public class MainActivity extends Activity {
         EditText fiberNameMin = (EditText) findViewById(R.id.fiberNameMin);
         EditText fiberNameMax = (EditText) findViewById(R.id.fiberNameMax);
         EditText searchName = (EditText) findViewById(R.id.searchName);
+        EditText searchRestaurant = (EditText) findViewById(R.id.searchRestaurant);
 //        
 //        CheckBox checkBox = (CheckBox) findViewById(R.id.cbProtein);
 //        if (checkBox.isChecked()) {
@@ -314,12 +315,13 @@ public class MainActivity extends Activity {
         String fiberMin = fiberNameMin.getText().toString();
         String fiberMax = fiberNameMax.getText().toString();
         String searchNameInput = searchName.getText().toString();
-
+        String searchRestaurantInput = searchRestaurant.getText().toString();
        
         String params[] = {
                // noResults, proteinMin, proteinMax, querySort
                  noResults, calorieMin,calorieMax, proteinMin, proteinMax, fatMin, 
-                 fatMax, carbMin, carbMax, fiberMin, fiberMax, orderBy, sortBy, searchNameInput
+                 fatMax, carbMin, carbMax, fiberMin, fiberMax, orderBy, sortBy, searchNameInput,
+                 searchRestaurantInput
         };
 
         Intent myIntent = new Intent(MainActivity.this, NextActivity2.class);

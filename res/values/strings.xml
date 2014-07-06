@@ -49,7 +49,7 @@
     <string name="sortDESC">Descending</string>
     <string name="searchFood">Search Food</string>
  <string name="map_button">Map</string>
-    
+     <string name="searchRestaurant">Search Restaurant</string>
       <string name="calorie_name_min">Calories Min</string>
    <string name="calorie_name_max">Calories Max</string>
     
