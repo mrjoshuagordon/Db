@@ -4,11 +4,17 @@ package com.jh.db;
 import java.util.HashMap;
 
 
+import android.app.ActionBar;
 import android.app.Activity;
+import android.app.DialogFragment;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+
 
 
 
@@ -33,6 +39,8 @@ public class EditFood extends Activity{
         TestAdapter mDbHelper = new TestAdapter(this);         
         mDbHelper.createDatabase();       
         mDbHelper.open(); 
+        
+        
         
         
         super.onCreate(savedInstanceState);
@@ -64,6 +72,13 @@ public class EditFood extends Activity{
         }
         
 
+        // get action bar   
+      //  ActionBar actionBar = getActionBar();
+ 
+        // Enabling Up / Back navigation
+      //  actionBar.setDisplayHomeAsUpEnabled(true);
+        
+        
         
         
     }
@@ -204,5 +219,71 @@ public void callMain(View view){
         startActivity(objIntent);
         
     }
+    
+    
+    
+    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.activity_main, menu);
+        return true;
+    }
+
+    
+    
+    // Called when a options menu item is selected
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        // We check what menu item was clicked and show a Toast
+        if (id == R.id.action_settings) {
+
+            // A DialogFragment is a Fragment you can place over top
+            // the current Activity. A Fragment is like an interface
+            // block that you can place into an Activity.
+            // The FrgamentManager allows you to interact with the
+            // Fragment
+            DialogFragment myFragment = new MyDialogFragment();
+
+            myFragment.show(getFragmentManager(), "theDialog");
+
+            return true;
+
+            // If exit was clicked close the app
+        } else if (id == R.id.add_food) {
+            Intent i = new Intent(EditFood.this, AddFood.class);
+            startActivity(i);
+          
+            return true;
+        }
+        else if (id == R.id.activity_main) {
+            Intent h = new Intent(EditFood.this, MainActivity.class);
+            startActivity(h);
+            
+            return true;
+        }
+        else if (id == R.id.exit_the_app) {
+            finish();
+            return true;
+        }else if (id == R.id.contact_me) {
+        Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                    "mailto","josh@jganalytics.com", null));
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "MenuFind");
+        startActivity(Intent.createChooser(emailIntent, "Send email..."));
+            
+            
+     
+            
+            
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    
+    
+    
     
 }

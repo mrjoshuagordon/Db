@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:background="#000000"
             android:padding="@dimen/padding_5dp"
-            android:text="@string/item_details"
+            android:text="@string/add_food_tv"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#FFFFFF" />
 

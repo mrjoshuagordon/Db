@@ -27,7 +27,8 @@
     <string name="foods_title">Foods</string>
     <string name="delete_button">Delete</string>
     <string name="add_button">Add New</string>
-    <string name="item_details">Item Details</string>
+        <string name="add_food_tv">Add New Food</string>
+    <string name="item_details">View and Edit</string>
     <string name="edit_button">Save Edit</string>
     <string name="sort_view">Order</string>
     <string name="calorieRadio">Cal</string>
