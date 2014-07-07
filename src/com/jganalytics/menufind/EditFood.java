@@ -224,33 +224,50 @@ public class EditFood extends Activity{
         String restaurant_edit = restaurant.getText().toString();  
         
         String provider;
-        LocationManager service = (LocationManager) getSystemService(LOCATION_SERVICE);
-        boolean enabled = service
-          .isProviderEnabled(LocationManager.GPS_PROVIDER);
+       // LocationManager service = (LocationManager) getSystemService(LOCATION_SERVICE);
+      //  boolean enabled = service
+       //   .isProviderEnabled(LocationManager.GPS_PROVIDER);
 
         // check if enabled and if not send user to the GSP settings
         // Better solution would be to display a dialog and suggesting to 
         // go to the settings
-        if (!enabled) {
-          Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-          startActivity(intent);
-        } 
         
-          LocationManager locationManager;
+        
+        try {
+            LocationManager service = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+            service.isProviderEnabled(LocationManager.GPS_PROVIDER);
+            Criteria criteria = new Criteria();
+            provider = service.getBestProvider(criteria, false);
+            Location location = service.getLastKnownLocation(provider);
+            
+            double lat = (double) (location.getLatitude());
+            double lng = (double) (location.getLongitude());
+          
+            String uri =  "geo:"+ lat + "," + lng  +  "?q=" + restaurant_edit;
+            
+            startActivity(new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(uri)));
+        } catch (Exception e) {
+            String uri =  "geo:"+ "0" + "," + "0"  +  "?q=" + restaurant_edit;
+            
+            startActivity(new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(uri)));
+        }
+        
+     
+//        try{
+//        if (!enabled) {
+//            Intent gpsOptionsIntent = new Intent(  
+//                    android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);  
+//                startActivity(gpsOptionsIntent);
+//          
+//        } 
+//        } catch (Exception e) {}
+        
+         // LocationManager locationManager;
           // Get the location manager
-          locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        //  locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
           // Define the criteria how to select the locatioin provider -> use
           // default
-          Criteria criteria = new Criteria();
-          provider = locationManager.getBestProvider(criteria, false);
-          Location location = locationManager.getLastKnownLocation(provider);
-          
-          double lat = (double) (location.getLatitude());
-          double lng = (double) (location.getLongitude());
-        
-          String uri =  "geo:"+ lat + "," + lng  +  "?q=" + restaurant_edit;
-          
-          startActivity(new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(uri)));
+       
     //      Intent myIntent = new Intent(EditFood.this, MenuMap.class);
       //    myIntent.putExtra("key", uri);
           // myIntent.putExtra("key", name); //Optional parameters
@@ -267,13 +284,13 @@ public class EditFood extends Activity{
     
     
     
-public void callMain(View view){
-    
-    Intent objIntent = new Intent(getApplication(), MainActivity.class);
-    
-    startActivity(objIntent);
-    
-}
+    public void callMain(View view){
+        
+        Intent objIntent = new Intent(getApplication(), MainActivity.class);
+        
+        startActivity(objIntent);
+        
+    }
     
     
     public void callMainActivity(View view){
