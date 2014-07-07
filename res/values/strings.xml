@@ -27,7 +27,8 @@
     <string name="foods_title">Foods</string>
     <string name="delete_button">Delete</string>
     <string name="add_button">Add New</string>
-        <string name="add_food_tv">Add New Food</string>
+    <string name="add_food_tv">Add New Food</string>
+    <string name="menuFind">Menu Find!</string>
     <string name="item_details">View and Edit</string>
     <string name="edit_button">Save Edit</string>
     <string name="sort_view">Order</string>
@@ -45,12 +46,12 @@
     <string name="fiber_name_max">Fiber(g) Max </string>
     <string name="fiber_name_min">Fiber(g) Min</string>
     <string name="num_results">No. of Results</string>
-      <string name="sortASC">Ascending</string>
+    <string name="sortASC">Ascending</string>
     <string name="sortDESC">Descending</string>
     <string name="searchFood">Search Food</string>
- <string name="map_button">Map</string>
-     <string name="searchRestaurant">Search Restaurant</string>
-      <string name="calorie_name_min">Calories Min</string>
-   <string name="calorie_name_max">Calories Max</string>
-    
+    <string name="map_button">Map</string>
+    <string name="searchRestaurant">Search Restaurant</string>
+    <string name="calorie_name_min">Calories Min</string>
+    <string name="calorie_name_max">Calories Max</string>
+
 </resources>

@@ -215,13 +215,13 @@
             android:onClick="EditFoodMethod"
             android:text="@string/edit_button" />
 
-    <!--     <Button
-            android:id="@+id/addButton"
+         <Button
+            android:id="@+id/mapButton"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="goAddFood"
-            android:text="@string/add_button" />-->
+            android:onClick="goMapRest"
+            android:text="Map Restaurant" />
     </TableRow>
 
 </TableLayout>

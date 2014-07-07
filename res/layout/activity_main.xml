@@ -83,7 +83,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="goToNew2"
-        android:text="Query DB" />
+        android:text="@string/menuFind" />
 
     <EditText
         android:id="@+id/queryName"
