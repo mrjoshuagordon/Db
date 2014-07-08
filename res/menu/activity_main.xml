@@ -3,7 +3,12 @@
     <!--
           <item android:id="@+id/menu_settings"
         android:title="@string/menu_settings"
-        android:orderInCategory="100" />
+        android:orderInCategory="100"
+        
+          <item
+            android:id="@+id/exit_the_app"
+            android:orderInCategory="101"
+            android:title="Exit"/> />
     -->
 
     <group>
@@ -15,10 +20,7 @@
             android:id="@+id/contact_me"
             android:orderInCategory="101"
             android:title="Contact"/>
-        <item
-            android:id="@+id/exit_the_app"
-            android:orderInCategory="101"
-            android:title="Exit"/>
+      
         <item
             android:id="@+id/add_food"
             android:icon="@drawable/ic_action_new"

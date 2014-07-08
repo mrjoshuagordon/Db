@@ -229,7 +229,7 @@ public class TestAdapter
          String searchQuery = query[13];
          String searchRestaurant = query[14];
          
-         if(noResultsQuery.length()==0){ noResultsQuery = "10"; }          
+         if(noResultsQuery.length()==0){ noResultsQuery = "20"; }          
          if(calorieQueryMin.length()==0){ calorieQueryMin = "0"; }          
          if(calorieQueryMax.length()==0){ calorieQueryMax = "4580"; }
          if(proteinQueryMin.length()==0){ proteinQueryMin = "0"; }          

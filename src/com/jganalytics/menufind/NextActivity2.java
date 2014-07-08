@@ -196,10 +196,7 @@ public class NextActivity2 extends ListActivity {
             
             return true;
         }
-        else if (id == R.id.exit_the_app) {
-            finish();
-            return true;
-        }else if (id == R.id.contact_me) {
+       else if (id == R.id.contact_me) {
         Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
                     "mailto","josh@jganalytics.com", null));
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "MenuFind");

@@ -45,7 +45,7 @@
     <string name="carb_name_min">Carb(g) Min</string>
     <string name="fiber_name_max">Fiber(g) Max </string>
     <string name="fiber_name_min">Fiber(g) Min</string>
-    <string name="num_results">No. of Results</string>
+    <string name="num_results">Number of Results</string>
     <string name="sortASC">Ascending</string>
     <string name="sortDESC">Descending</string>
     <string name="searchFood">Search Food</string>

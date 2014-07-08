@@ -1,8 +1,19 @@
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".EditFood" >
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbars="none"
+    android:layout_weight="1">
+    <LinearLayout
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:orientation="vertical">
+
+
+<TableLayout 
+  
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+     >
 
     <!--
     <EditText
@@ -78,12 +89,7 @@
         android:text="Button" />
     -->
 
-    <Button
-        android:id="@+id/btnCalculate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="goToNew2"
-        android:text="@string/menuFind" />
+    
 
     <EditText
         android:id="@+id/queryName"
@@ -340,12 +346,26 @@
             android:inputType="text" 
             android:textSize="16sp"/>
     </TableRow>
-
+    <TableRow
+        android:id="@+id/tr9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
     <Button
         android:id="@+id/clearSearchButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="clearSearch"
+        android:layout_weight="1"
         android:text="Clear" />
-
+    
+    <Button
+        android:id="@+id/btnCalculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="goToNew2"
+        android:layout_weight="1"
+        android:text="@string/menuFind" />
+</TableRow>
 </TableLayout>
+
+</LinearLayout> </ScrollView>
