@@ -19,6 +19,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 
@@ -232,31 +233,64 @@ public class EditFood extends Activity{
         // Better solution would be to display a dialog and suggesting to 
         // go to the settings
         
-        
-        try {
-            LocationManager service = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-            service.isProviderEnabled(LocationManager.GPS_PROVIDER);
-            Criteria criteria = new Criteria();
-            provider = service.getBestProvider(criteria, false);
-            Location location = service.getLastKnownLocation(provider);
-            
-            double lat = (double) (location.getLatitude());
-            double lng = (double) (location.getLongitude());
-          
-            String uri =  "geo:"+ lat + "," + lng  +  "?q=" + restaurant_edit;
-            
-            startActivity(new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(uri)));
-        } catch (Exception e) {
-            DialogFragment myFragment = new GPSDialogFragment();
+        GPSService mGPSService = new GPSService(this);
+        mGPSService.getLocation();
 
-            myFragment.show(getFragmentManager(), "theDialog");
+        if (mGPSService.isLocationAvailable == false) {
+
+            // Here you can ask the user to try again, using return; for that
+           // DialogFragment myFragment = new GPSDialogFragment();
             
+          //  myFragment.show(getFragmentManager(), "theDialog");
+            return;
+
+            // Or you can continue without getting the location, remove the return; above and uncomment the line given below
+            // address = "Location not available";
+        } else {
+
+            // Getting location co-ordinates
+            double latitude = mGPSService.getLatitude();
+            double longitude = mGPSService.getLongitude();
          
-            
-           // String uri =  "geo:"+ "0" + "," + "0"  +  "?q=" + restaurant_edit;
-            
-           // startActivity(new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(uri)));
+            String uri =  "geo:"+ latitude + "," + longitude   +  "?q=" + restaurant_edit;
+         
+         startActivity(new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(uri)));
+        
+
+         
         }
+
+      
+
+        // make sure you close the gps after using it. Save user's battery power
+        mGPSService.closeGPS();
+        
+        
+        
+//        try {
+//            LocationManager service = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+//            service.isProviderEnabled(LocationManager.GPS_PROVIDER);
+//            Criteria criteria = new Criteria();
+//            provider = service.getBestProvider(criteria, false);
+//            Location location = service.getLastKnownLocation(provider);
+//            
+//            double lat = (double) (location.getLatitude());
+//            double lng = (double) (location.getLongitude());
+//          
+//            String uri =  "geo:"+ lat + "," + lng  +  "?q=" + restaurant_edit;
+//            
+//            startActivity(new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(uri)));
+//        } catch (Exception e) {
+//            DialogFragment myFragment = new GPSDialogFragment();
+//
+//            myFragment.show(getFragmentManager(), "theDialog");
+//            
+//         
+//            
+//           // String uri =  "geo:"+ "0" + "," + "0"  +  "?q=" + restaurant_edit;
+//            
+//           // startActivity(new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(uri)));
+//        }
         
      
 //        try{
