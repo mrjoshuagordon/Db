@@ -229,19 +229,22 @@ public class TestAdapter
          String searchQuery = query[13];
          String searchRestaurant = query[14];
          
+         String searchQueryTrim = searchQuery.trim();
+         String searchRestaurantTrim = searchRestaurant.trim();
+         
          if(noResultsQuery.length()==0){ noResultsQuery = "20"; }          
          if(calorieQueryMin.length()==0){ calorieQueryMin = "0"; }          
-         if(calorieQueryMax.length()==0){ calorieQueryMax = "4580"; }
+         if(calorieQueryMax.length()==0){ calorieQueryMax = "10000"; }
          if(proteinQueryMin.length()==0){ proteinQueryMin = "0"; }          
-         if(proteinQueryMax.length()==0){ proteinQueryMax = "179"; }
+         if(proteinQueryMax.length()==0){ proteinQueryMax = "500"; }
          if(fatQueryMin.length()==0){ fatQueryMin = "0"; }          
-         if(fatQueryMax.length()==0){ fatQueryMax = "277"; }
+         if(fatQueryMax.length()==0){ fatQueryMax = "500"; }
          if(carbQueryMin.length()==0){ carbQueryMin = "0"; }          
-         if(carbQueryMax.length()==0){ carbQueryMax = "414"; }
+         if(carbQueryMax.length()==0){ carbQueryMax = "1000"; }
          if(fiberQueryMin.length()==0){ fiberQueryMin = "0"; }          
-         if(fiberQueryMax.length()==0){ fiberQueryMax = "38"; }
-         if(searchQuery.length()==0){ search = " ' "; } else{ search = "' and food_name like '%" + searchQuery + "%' "; }
-         if(searchRestaurant.length()==0){ searchRest = ""; } else{ searchRest = " and restaurant like '%" + searchRestaurant + "%' "; }
+         if(fiberQueryMax.length()==0){ fiberQueryMax = "100"; }
+         if(searchQuery.length()==0){ search = " ' "; } else{ search = "' and food_name like '%" + searchQueryTrim + "%' "; }
+         if(searchRestaurant.length()==0){ searchRest = ""; } else{ searchRest = " and restaurant like '%" + searchRestaurantTrim + "%' "; }
          
          
          ArrayList<HashMap<String, String>> foodArrayList = new ArrayList<HashMap<String, String>>(); 

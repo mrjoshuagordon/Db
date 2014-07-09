@@ -247,9 +247,15 @@ public class EditFood extends Activity{
             
             startActivity(new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(uri)));
         } catch (Exception e) {
-            String uri =  "geo:"+ "0" + "," + "0"  +  "?q=" + restaurant_edit;
+            DialogFragment myFragment = new GPSDialogFragment();
+
+            myFragment.show(getFragmentManager(), "theDialog");
             
-            startActivity(new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(uri)));
+         
+            
+           // String uri =  "geo:"+ "0" + "," + "0"  +  "?q=" + restaurant_edit;
+            
+           // startActivity(new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(uri)));
         }
         
      
